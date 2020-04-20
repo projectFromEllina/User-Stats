@@ -11,10 +11,10 @@ export class StatisticsService {
   }
 
   getUsers(page: number = 0, range: number = 50): Observable<StatisticsModel> {
-    return this.http.get<StatisticsModel>(`http://159.65.233.178:8080/task/api/v1/users?page=${page}&range=${range}`);
+    return this.http.get<StatisticsModel>(`/api/v1/users?page=${page}&range=${range}`);
   }
 
   getChartData(id: number, from: string, to: string): Observable<Array<ChartDataModel>> {
-    return this.http.get<Array<ChartDataModel>>(`http://159.65.233.178:8080/task/api/v1/users/statistic?id=${id}&from=${from}&to=${to}`);
+    return this.http.get<Array<ChartDataModel>>(`/api/v1/users/statistic?id=${id}&from=${from}&to=${to}`);
   }
 }
