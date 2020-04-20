@@ -5,13 +5,18 @@
 4. npm start (or ng serve --proxy-config proxy-config.json)
 
 Layout:
+<br />
 <img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/1.JPG" />
+<br />
+Main page:
 <br />
 <img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/1.1.JPG" />
 <br />
-<img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/2.JPG" />
+User stats:
 <br />
 <img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/3.JPG" />
+<br />
+Charts:
 <br />
 <img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/7.JPG" />
 <br />
