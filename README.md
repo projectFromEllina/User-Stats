@@ -8,8 +8,8 @@ Layout:
 <br />
 <img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/1.JPG" />
 <br />
-<div>Main page:</div>
-<br />
+Main page:
+<br /><br /><br />
 <img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/1.1.JPG" />
 <br />
 User stats:
