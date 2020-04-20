@@ -1,0 +1,13 @@
+﻿@import "../../../../assets/styles/variables";
+
+.header {
+  background: $blue;
+  padding: 16px 0;
+  &__logo {
+    font-size: 40px;
+    color: #fff;
+  }
+  &.main {
+    background: transparent;
+  }
+}

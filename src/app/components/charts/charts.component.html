@@ -1,0 +1,68 @@
+<div class="charts">
+  <div class="container">
+    <div class="row">
+      <nav class="nav-menu">
+        <ul class="nav-menu__ul">
+          <li>
+            <a routerLink=""
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact:true}">Main page</a>
+          </li>
+          <li>
+            <a routerLink="/user-statistics" routerLinkActive="active">User satistics</a>
+          </li>
+          <li>
+            <a [routerLink]="['/user/', id]" routerLinkActive="active">Samuel Frost</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="charts__top">
+        <h2 class="charts__title main-title">Samuel Frost</h2>
+        <div class="charts__calendar">
+          <label for="date-picker" >
+            <button (click)="datePicker.toggle()"></button>
+          </label>
+          <input type="text"
+                 id="date-picker"
+                 #datePicker="bsDaterangepicker"
+                 placeholder="Select date"
+                 bsDaterangepicker
+                 (onHidden)="onChangeDate()"
+                 [(ngModel)]="bsRangeValue"
+                 [bsConfig]="{ isAnimated: true, rangeInputFormat: 'DD MMM YYYY', containerClass: 'theme-dark-blue'}">
+        </div>
+      </div>
+
+      <div class="charts__main" *ngIf="!isShowPreloader">
+        <div class="main__title">Clicks</div>
+        <div class="fusioncharts-wrap">
+          <fusioncharts
+            type="spline"
+            width="100%"
+            [dataSource]="dataClickSource">
+          </fusioncharts>
+          <span class="logo-hidden"></span>
+          <div class="no-data" *ngIf="!isNoData">
+            No data for this period <br /> Сhoose another
+          </div>
+        </div>
+
+        <div class="main__title">Views</div>
+        <div class="fusioncharts-wrap">
+          <fusioncharts
+            type="spline"
+            width="100%"
+            [dataSource]="dataViewsSource">
+          </fusioncharts>
+          <span class="logo-hidden"></span>
+          <div class="no-data" *ngIf="!isNoData">
+            No data for this period <br /> Сhoose another
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-preloader [isShow]="isShowPreloader"></app-preloader>

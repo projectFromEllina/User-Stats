@@ -1,0 +1,221 @@
+﻿@import "variables";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  @include transition;
+  &-white {
+    color: $blue;
+    background: #fff;
+    border: 1px solid #fff;
+    &:hover {
+      color: #fff;
+      background: transparent;
+    }
+  }
+  &-blue {
+    color: #fff;
+    background: $blue;
+    border: 1px solid $blue;
+    &:hover {
+      color: $blue;
+      background: #fff;
+    }
+  }
+}
+
+h2.title {
+  margin: 0 auto 24px;
+  color: $black;
+  text-align: center;
+  font-size: 32px;
+  line-height: 39px;
+  @media screen and (max-width: $max-sm) {
+    font-size: 28px;
+    line-height: 33px;
+    margin-bottom: 17px;
+  }
+}
+.main-title {
+  font-size: 32px;
+  line-height: 39px;
+  font-weight: 700;
+  color: $black;
+  @media screen and (max-width: $max-sm) {
+    font-size: 26px;
+  }
+}
+
+.description {
+  margin: 0 auto;
+  text-align: center;
+  color: $gray;
+  font-size: 20px;
+  line-height: 142%;
+  @media screen and (max-width: $max-sm) {
+    font-size: 18px;
+    line-height: 127%;
+  }
+}
+
+//carousel
+.carousel {
+  .carousel-control {
+    &-prev {
+      left: -50px;
+      @media screen and (max-width: $max-sm) {
+        left: -40px;
+      }
+      &-icon {
+        transform: rotate(180deg);
+      }
+    }
+    &-next {
+      right: -50px;
+      @media screen and (max-width: $max-sm) {
+        right: -40px;
+      }
+    }
+    &-prev, &-next {
+      opacity: .8;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+      &-icon {
+        background-image: url("/assets/images/arrow-blue.png");
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        opacity: 1;
+      }
+    }
+  }
+}
+carousel {
+  &.non-active {
+    &-prev {
+      .carousel-control-prev {
+        opacity: 1;
+        cursor: auto;
+        &-icon {
+          filter: brightness(0);
+          opacity: .1;
+        }
+      }
+    }
+    &-next {
+      .carousel-control-next {
+        opacity: 1;
+        cursor: auto;
+        &-icon {
+          filter: brightness(0);
+          opacity: .1;
+        }
+      }
+    }
+  }
+}
+
+//Nav-menu
+.nav-menu {
+  width: 100%;
+  margin-bottom: 24px;
+  &__ul {
+    display: flex;
+    &>li{
+      position: relative;
+      margin-right: 20px;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        right: -20px;
+        width: 13px;
+        height: 12px;
+        background: url("/assets/images/arrow-gray.png") no-repeat;
+      }
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+      &>a {
+        color: #ccc;
+        @include transition;
+        @media screen and (max-width: $max-sm) {
+          font-size: 12px;
+        }
+        &:hover {
+          color: darken(#ccc, 30);
+          text-decoration: none;
+        }
+        &.active {
+          color: $blue;
+          cursor: context-menu;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+fusioncharts {
+  display: block;
+  height: 325px;
+  text {
+    fill: #ccc;
+  }
+  .raphael-group-66-common-elems-group {
+    path {
+      stroke: $blue;
+      stroke-width: 4px;
+    }
+  }
+  .raphael-group-67-plot-group {
+    path {
+      fill: $blue;
+      stroke: $blue;
+      stroke-width: 4px;
+    }
+  }
+}
+
+bs-daterangepicker-container {
+  top: 5px !important;
+  left: -190px !important;
+  @media screen and (max-width: $max-md) {
+    left: -45px !important;
+  }
+  @media screen and (max-width: $max-sm) {
+    left: 25px !important;
+    top: -24px !important;
+  }
+  .bs-datepicker {
+    @media screen and (max-width: $max-sm) {
+      transform: scale(.9);
+    }
+  }
+}
+
+//Scroll
+::-webkit-scrollbar { width: 5px; height: 5px}
+::-webkit-scrollbar-button { display: none; }
+::-webkit-scrollbar-track-piece { background-color: #00000019;}
+::-webkit-scrollbar-thumb { background-color: #0000003F; border-radius: 3px;}
+::-webkit-resizer { background-color: #666;}
+
+@media screen and (max-width: $max-sm) {
+  bs-datepicker-inline-container {
+    transform: scale(0.85);
+    margin: -20px 0 0 -20px;
+  }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px}
+}
+

@@ -1,0 +1,23 @@
+﻿$blue: #3A80BA;
+$gray: #7E7E7E;
+$light-gray: #F1F1F1;
+$black: #1A1A1A;
+
+//Media
+$max-lg: 1201px;
+$max-md: 769px;
+$max-sm: 426px;
+$max-mob: 321px;
+
+
+//Mixins
+@mixin transition {
+  transition: .15s ease-out;
+}
+
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,22 @@
+﻿@import "../../../../assets/styles/variables";
+
+.not-found {
+  &-wrap {
+    min-height: calc(100vh - 130px);
+  }
+  @include position-center();
+  text-align: center;
+  font-size: 45px;
+  color: $blue;
+  &__code {
+    margin: 0 auto;
+    font-size: 70px;
+    font-weight: bold;
+    color: $blue;
+  }
+  .btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 13px 30px;
+  }
+}

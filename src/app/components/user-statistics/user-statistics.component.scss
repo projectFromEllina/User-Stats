@@ -1,0 +1,114 @@
+@import "../../../assets/styles/variables";
+
+.user-statistic {
+  padding: 16px 0 24px;
+  min-height: calc(100vh - 130px);
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__table {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 337px);
+    margin-bottom: 24px;
+    border-radius: 10px;
+    overflow: auto;
+    &-wrap {
+      width: 100%;
+      min-height: calc(100vh - 313px);
+    }
+    thead {
+      color: #fff;
+      background: $blue;
+      td {
+        padding: 14px 20px;
+        border: 1px solid;
+        vertical-align: middle;
+      }
+    }
+    tbody {
+      tr {
+        cursor: pointer;
+        &:nth-child(odd) {
+          background: #FBFBFB;
+        }
+        &:nth-child(even) {
+          background: $light-gray;
+        }
+      }
+      td {
+        color: $black;
+        padding: 6px 20px;
+        border: 1px solid #fff;
+      }
+    }
+    td {
+      &.center {
+        text-align: center;
+      }
+    }
+    .table-loader {
+      min-height: 300px;
+    }
+  }
+  &__pagination {
+    margin: 0 auto;
+    slide {
+      margin: 0 4px;
+      a {
+        display: inline-block;
+        width: 48px !important;
+        height: 48px;
+        text-align: center;
+        line-height: 45px;
+        border-radius: 8px;
+        color: $black;
+        border: 2px solid $light-gray;
+        @include transition;
+        &:hover {
+          color: darken($blue, 10);
+          text-decoration: none;
+        }
+        &.active {
+          background: $blue;
+          color: #fff;
+          &:hover {
+            background: darken($blue, 10);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $max-md) {
+  .user-statistic {
+    &__table {
+      font-size: 14px;
+      thead {
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $max-sm) {
+  .user-statistic {
+    &__table {
+      height: auto;
+      margin-bottom: 16px;
+    }
+    &__pagination {
+      slide {
+        margin: 0 2px;
+        a {
+          width: 38px !important;
+          height: 38px;
+          line-height: 38px;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,37 @@
+﻿@import "../../../../assets/styles/variables";
+
+.footer {
+  padding: 130px 0 32px;
+  background: url("../../../../assets/images/footer-bg.png") no-repeat;
+  background-size: 100% 100%;
+  &-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+  }
+  &__logo {
+    font-size: 32px;
+    color: #fff;
+  }
+  &.non-main {
+    background: #1C3B55;
+    padding: 17px 0;
+    .footer__logo {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: $max-sm) {
+  .footer {
+    background-size: cover;
+    &-wrap {
+      flex-direction: column;
+    }
+    &__logo, &__rights {
+      margin-bottom: 15px;
+    }
+  }
+}

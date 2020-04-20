@@ -1,0 +1,69 @@
+<div class="user-statistic">
+  <div class="container">
+    <div class="row">
+      <nav class="user-statistic__menu nav-menu">
+        <ul class="nav-menu__ul">
+          <li>
+            <a routerLink=""
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact:true}">Main page</a>
+          </li>
+          <li>
+            <a routerLink="/user-statistics" routerLinkActive="active">User satistics</a>
+          </li>
+        </ul>
+      </nav>
+
+      <h2 class="user-statistic__title main-title">Users statistics</h2>
+
+      <div class="user-statistic__table-wrap">
+        <table class="user-statistic__table" *ngIf="users && !isShowPreloader">
+          <thead>
+          <tr>
+            <td class="center">Id</td>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Email</td>
+            <td class="center">Gender</td>
+            <td class="center">IP address</td>
+            <td class="center">Total clicks</td>
+            <td class="center">Total page views</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users" (click)="onNavigateForUserPage(user)">
+            <td class="center">{{user.id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td class="center">{{user.gender}}</td>
+            <td class="center">{{user.ipAddress}}</td>
+            <td class="center">{{user.totalClicks}}</td>
+            <td class="center">{{user.totalPageViews}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <app-preloader [isShow]="isShowPreloader"></app-preloader>
+
+      <div class="user-statistic__pagination" *ngIf="arrayPages">
+        <carousel [itemsPerSlide]="itemsPerSlide"
+                  [singleSlideOffset]="false"
+                  [noWrap]="true"
+                  [interval]="false"
+                  [showIndicators]="false"
+                  [class.non-active-prev] = "getNonActiveArrow('prev')"
+                  [class.non-active-next] = "getNonActiveArrow('next')"
+                  (slideRangeChange)="onSlideRangeChange($event)">
+          <slide *ngFor="let page of arrayPages"
+                  (click)="onChangePage()">
+            <a routerLink="/user-statistics"
+               [queryParams]="{'page': page, 'range': numberOfLoadedUsers}"
+               routerLinkActive="active">{{page}}</a>
+          </slide>
+        </carousel>
+      </div>
+    </div>
+  </div>
+</div>

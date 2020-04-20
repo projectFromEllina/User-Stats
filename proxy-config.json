@@ -1,0 +1,7 @@
+﻿{
+  "/api": {
+    "target": "http://159.65.233.178:8080/task",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
