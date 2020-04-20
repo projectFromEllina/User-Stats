@@ -9,7 +9,7 @@ Layout:
 <img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/1.JPG" />
 <br />
 Main page:
-<br /><br /><br />
+<br />
 <img src="https://github.com/projectFromEllina/User-Stats/blob/master/screenshots/1.1.JPG" />
 <br />
 User stats:
